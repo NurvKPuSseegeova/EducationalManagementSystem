@@ -1,0 +1,23 @@
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.xxx.entity">
+	    <class name="IdCard" table="card">
+		<id name="id" column="id" >
+			<!-- <generator class="identity"> -->
+			<generator class="foreign">
+			<param name="property">person</param>
+			</generator>
+		</id>
+		
+	
+		<property name="cardNO" column="cardNO" >
+		</property>
+		<one-to-one name="person" class="Person" constrained="true"/>
+        
+		
+	 
+	</class>
+</hibernate-mapping>
